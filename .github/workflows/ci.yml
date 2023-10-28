@@ -8,7 +8,7 @@ on:
 jobs:
   s3upload:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged 
+    if: github.event.pull_request.merged || ( github.ref == 'refs/heads/main' )
     steps:
       - name: Configure aws credentials
         uses: aws-actions/configure-aws-credentials@v2
